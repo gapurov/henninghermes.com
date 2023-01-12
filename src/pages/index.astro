@@ -2,22 +2,26 @@
 import BaseHead from '~/components/BaseHead.astro';
 import Footer from '~/components/Footer.astro';
 import Hero from '~/components/Hero.astro';
-
+import Introduction from '~/components/Introduction.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '~/config';
 
-import {Content as Intro} from '~/content/intro.mdx';
+import {Content as ShortAbout} from '~/content/short-about.md';
+import {Content as About} from '~/content/about.mdx';
 
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth bg-white antialiased">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
-		<Hero title='HELLo'>
-			<Intro />
+		<Hero title='Welcome to Henning Hermes’ personal website!'>
+			<ShortAbout />
 		</Hero>
+		<Introduction>
+			<About />
+		</Introduction>
 		<Footer />
 	</body>
 </html>

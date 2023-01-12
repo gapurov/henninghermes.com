@@ -11,5 +11,9 @@ import react from "@astrojs/react";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://henninghermes.com',
-  integrations: [mdx(), sitemap(), tailwind(), react()]
+  integrations: [mdx(), sitemap(), tailwind({
+    config: {
+      applyBaseStyles: false
+    }
+  }), react()]
 });
