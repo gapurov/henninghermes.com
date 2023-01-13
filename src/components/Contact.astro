@@ -1,0 +1,70 @@
+---
+// @ts-nocheck
+import Container from "~/components/Container.astro";
+---
+<section
+  id="contact"
+  aria-label="Get in Touch"
+  class="relative pt-32 pb-20 pt-20 md:pt-24"
+>
+
+<Container className="max-w-[960px]">
+  <div class="max-w-2xl md:mx-auto md:text-center xl:max-w-none mb-20">
+    <h2 class="font-display tracking-tight text-5xl">
+      Lets Talk
+    </h2>
+  </div>
+
+  <form
+    netlify
+    netlify-honeypot
+    name="contact"
+    method="POST"
+    action="/success"
+    class="grid grid-cols-1 gap-y-6 sm:gap-x-8">
+    <p class="hidden">
+      <label>
+        Don’t fill this out if you’re human: <input name="bot-field" />
+      </label>
+    </p>
+
+    <div>
+      <label for="name" class="block text-sm font-medium text-gray-700">Your Name (required)</label>
+      <div class="mt-1">
+        <input type="text" name="name" id="name" autocomplete="name" class="block w-full rounded-md border-gray-300 py-3 px-4 shadow-sm focus:border-teal-500 focus:ring-teal-500" required>
+      </div>
+    </div>
+
+    <div>
+      <label for="email" class="block text-sm font-medium text-gray-700">Email (required)</label>
+      <div class="mt-1">
+        <input id="email" name="email" type="email" autocomplete="email" class="block w-full rounded-md border-gray-300 py-3 px-4 shadow-sm focus:border-teal-500 focus:ring-teal-500" required>
+      </div>
+    </div>
+
+    <div>
+      <label for="subject" class="block text-sm font-medium text-gray-700">Subject (required)</label>
+      <div class="mt-1">
+        <input type="text" name="subject" id="subject" class="block w-full rounded-md border-gray-300 py-3 px-4 shadow-sm focus:border-teal-500 focus:ring-teal-500" required>
+      </div>
+    </div>
+
+
+    <div>
+      <label for="message" class="block text-sm font-medium text-gray-700">Message (required)</label>
+      <div class="mt-1">
+        <textarea id="message" name="message" rows="4" class="block w-full rounded-md border-gray-300 py-3 px-4 shadow-sm focus:border-teal-500 focus:ring-teal-500" required></textarea>
+      </div>
+    </div>
+
+    <div>
+      <button type="submit" class="inline-flex w-full items-center justify-center rounded-md border border-transparent bg-teal-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2">Send</button>
+    </div>
+
+  </form>
+
+
+
+</Container>
+
+</section>
