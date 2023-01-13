@@ -6,14 +6,11 @@ import sitemap from '@astrojs/sitemap';
 import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
-import image from "@astrojs/image";
-
-// https://astro.build/config
 export default defineConfig({
   site: 'https://henninghermes.com',
   integrations: [mdx(), sitemap(), tailwind({
     config: {
       applyBaseStyles: false
     }
-  }), image()]
+  })]
 });
