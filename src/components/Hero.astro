@@ -1,47 +1,73 @@
 ---
-import GridPattern from '~/components/GridPattern.astro';
 import coverImage from '~/images/cover.jpg';
+import { Image } from '@astrojs/image/components';
 // @ts-ignore
 import Button from '~/components/Button.astro';
+import Container from '~/components/Container.astro';
+import SocialLink from '~/components/SocialLink.astro';
+
+import TwitterIcon from './TwitterIcon.astro';
+import XingIcon from './XingIcon.astro';
+import CVIcon from './CVIcon.astro';
+import LinkedInIcon from './LinkedInIcon.astro';
 
 const {title} = Astro.props;
 ---
 
-<header class="overflow-hidden bg-slate-100 lg:bg-transparent lg:px-5">
-  <div class="mx-auto grid max-w-6xl grid-cols-1 grid-rows-[auto_1fr] gap-y-16 pt-16 md:pt-20 lg:grid-cols-12 lg:gap-y-20 lg:px-3 lg:pb-36 lg:pt-20 xl:py-32">
-    <div class="relative flex items-end lg:col-span-5 lg:row-span-2">
-      <!-- <div class="absolute -top-20 -bottom-12 left-0 right-1/2 z-10 br-6xl bg-blue-600 text-white/10 md:bottom-8 lg:-inset-y-32 lg:right-full lg:left-[-100vw] lg:-mr-40">
-        <GridPattern
-          x="100%"
-          y="100%"
-          patternTransform="translate(112 64)"
-        />
-      </div> -->
-      <div class="relative z-10 mx-auto flex w-64 rounded-xl bg-slate-600 shadow-xl md:w-80 lg:w-auto">
-        <img class="w-full" src={coverImage} alt="" />
-      </div>
-    </div>
-    <div class="relative px-4 sm:px-6 lg:col-span-7 lg:pr-0 lg:pb-14 lg:pl-16 xl:pl-20">
-      <div class="hidden lg:absolute lg:bottom-0 lg:-top-32 lg:right-[-100vw] lg:left-[-100vw] lg:block lg:bg-slate-100" />
-      <!-- <Testimonial /> -->
-    </div>
-    <div class="bg-white pt-16 lg:col-span-7 lg:bg-transparent lg:pt-0 lg:pl-16 xl:pl-20">
-      <div class="mx-auto px-4 sm:px-6 md:max-w-2xl md:px-4 lg:px-0">
-        <h1 class="font-display text-5xl font-extrabold text-slate-900 sm:text-6xl">
-          {title}
-        </h1>
-        <div class="mt-4 text-2xl text-slate-600">
-          <slot />
-        </div>
-        <div class="mt-8 flex gap-4">
-          <Button href="#cv" color="blue" className="w-100">
-            Curriculum Vitae
-          </Button>
-          <Button href="#contact" variant="outline" color="blue">
-            Get in touch
-          </Button>
-        </div>
-      </div>
-    </div>
+<Container className="pt-20 pb-16 lg:pt-32">
+  <!-- <div class="mb-10 mt-14 sm:mb-16">
+    <h1 class="mx-auto max-w-3xl font-display text-5xl font-medium tracking-tight text-slate-900 sm:text-7xl">
+      {title}
+    </h1>
   </div>
-</header>
+  <div class="mx-auto max-w-2xl text-lg tracking-tight text-slate-700">
+    <slot />
+  </div>
+  <div class="mt-10 flex justify-center gap-x-6">
+    <Button href="#cv">Curriculum Vitae</Button>
+  </div> -->
+
+
+  <div class="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
+          <div class="lg:pl-20">
+            <div class="max-w-xs px-2.5 lg:max-w-none">
+              <Image
+                src={coverImage}
+                alt=""
+                sizes="(min-width: 1024px) 32rem, 20rem"
+                class="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
+              />
+            </div>
+          </div>
+          <div class="lg:order-first lg:row-span-2">
+            <h1 class="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-6xl">
+              {title}
+            </h1>
+            <div class="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
+              <slot />
+            </div>
+          </div>
+
+          <div class="lg:pl-20">
+            <ul role="list">
+              <!-- social links -->
+               <SocialLink href="#" icon={TwitterIcon}>
+                Follow on Twitter
+              </SocialLink>
+              <SocialLink href="#" icon={XingIcon} className="mt-4">
+                Follow on Xing
+              </SocialLink>
+              <SocialLink href="#" icon={LinkedInIcon} className="mt-4">
+                Follow on LinkedIn
+              </SocialLink>
+              <SocialLink
+                href="/CV-Henning-Hermes.pdf"
+                icon={CVIcon}
+                className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
+              >
+                Curriculum Vitae
+              </SocialLink>
+            </ul>
+          </div>
+        </div>
+</Container>
