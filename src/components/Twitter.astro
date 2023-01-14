@@ -1,23 +1,24 @@
 ---
 import Container from "~/components/Container.astro";
+import TwitterSkeleton from "~/components/TwitterSkeleton.astro";
 ---
 <section
   id="twitter"
   aria-label="Latest on Twitter"
   class="pt-18 pb-20 pt-20 md:pt-24"
 >
-  <Container className="max-w-[960px]">
+  <Container className="!max-w-[960px] text-center">
     <div class="max-w-2xl md:mx-auto md:text-center xl:max-w-none mb-20">
       <h2 class="font-display tracking-tight text-5xl">
         Latest on Twitter
       </h2>
     </div>
 
-   <a class="twitter-timeline"
-      data-tweet-limit="4"
-      data-link-color="#f4ad24"
-      data-chrome="noheader nofooter noborders transparent"
-      href="https://twitter.com/henninghermes?ref_src=twsrc%5Etfw">Tweets by henninghermes</a>
+  <a class="twitter-timeline"
+       data-tweet-limit="4"
+       data-link-color="#f4ad24"
+       data-chrome="noheader nofooter noborders transparent"
+       href="https://twitter.com/henninghermes?ref_src=twsrc%5Etfw"> <TwitterSkeleton />  Tweets by henninghermes</a>
 
   </Container>
 </section>
