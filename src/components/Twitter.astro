@@ -3,12 +3,16 @@ import Container from "~/components/Container.astro";
 import TwitterSkeleton from "~/components/TwitterSkeleton.astro";
 
 ---
+<div class="lazyload" data-script="https://platform.twitter.com/widgets.js"></div>
+
 <section
 id="twitter"
 aria-label="Latest on Twitter"
 class="pt-18 pb-20 pt-20 md:pt-24"
 >
+
 <Container className="!max-w-[960px] text-center">
+
   <div class="max-w-2xl md:mx-auto md:text-center xl:max-w-none mb-20">
     <h2 class="font-display tracking-tight text-5xl">
       Latest on Twitter
@@ -27,5 +31,3 @@ class="pt-18 pb-20 pt-20 md:pt-24"
 
 <script src="/lib/lazysizes.min.js" async></script>
 <script src="/lib/ls.unveilhooks.min.js" async></script>
-
-<div class="lazyload" data-script="https://platform.twitter.com/widgets.js"></div>
