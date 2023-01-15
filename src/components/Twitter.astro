@@ -1,32 +1,31 @@
 ---
-import Container from "~/components/Container.astro";
-import TwitterSkeleton from "~/components/TwitterSkeleton.astro";
-
+import Container from '~/components/Container.astro'
+import TwitterSkeleton from '~/components/TwitterSkeleton.astro'
 ---
-<div class="lazyload" data-script="https://platform.twitter.com/widgets.js"></div>
+
+<div class="lazyload" data-script="https://platform.twitter.com/widgets.js">
+</div>
 
 <section
-id="twitter"
-aria-label="Latest on Twitter"
-class="pt-18 pb-20 pt-20 md:pt-24"
+  id="twitter"
+  aria-label="Latest on Twitter"
+  class="pt-18 pb-20 pt-20 md:pt-24"
 >
+  <Container className="!max-w-[960px] text-center">
+    <div class="mb-20 max-w-2xl md:mx-auto md:text-center xl:max-w-none">
+      <h2 class="font-display text-5xl tracking-tight">Latest on Twitter</h2>
+    </div>
 
-<Container className="!max-w-[960px] text-center">
-
-  <div class="max-w-2xl md:mx-auto md:text-center xl:max-w-none mb-20">
-    <h2 class="font-display tracking-tight text-5xl">
-      Latest on Twitter
-    </h2>
-  </div>
-
-
-  <a class="twitter-timeline"
-  data-tweet-limit="4"
-  data-link-color="#f4ad24"
-  data-chrome="noheader nofooter noborders transparent"
-  href="https://twitter.com/henninghermes?ref_src=twsrc%5Etfw"> <TwitterSkeleton />  Tweets by henninghermes</a>
-
-</Container>
+    <a
+      class="twitter-timeline"
+      data-tweet-limit="4"
+      data-link-color="#f4ad24"
+      data-chrome="noheader nofooter noborders transparent"
+      href="https://twitter.com/henninghermes?ref_src=twsrc%5Etfw"
+    >
+      <TwitterSkeleton /> Tweets by henninghermes</a
+    >
+  </Container>
 </section>
 
 <script src="/lib/lazysizes.min.js" async></script>

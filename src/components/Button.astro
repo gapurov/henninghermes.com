@@ -1,6 +1,4 @@
 ---
-import clsx from 'clsx'
-
 const baseStyles = {
   solid:
     'group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2',
@@ -24,18 +22,33 @@ const variantStyles = {
   },
 }
 
-
 interface Props {
-  href?:string
-  variant?:'solid' | 'outline'
-  color?:'slate' | 'blue' | 'white'
-  className?:string
+  href?: string
+  variant?: 'solid' | 'outline'
+  color?: 'slate' | 'blue' | 'white'
+  className?: string
 }
 
-const {href, variant = 'solid', color = 'slate', className,...props} = Astro.props
+const {
+  href,
+  variant = 'solid',
+  color = 'slate',
+  className,
+  ...props
+} = Astro.props
 
 // @ts-ignore
-const classes = clsx(baseStyles[variant],variantStyles[variant][color], className)
+const classes = [baseStyles[variant], variantStyles[variant][color], className]
 ---
 
-{href ? <a href={href} {...props} class={classes}><slot/></a> : <button {...props} class={classes}><slot/></button>
+{
+  href ? (
+    <a href={href} {...props} class:list={classes}>
+      <slot />
+    </a>
+  ) : (
+    <button {...props} class:list={classes}>
+      <slot />
+    </button>
+  )
+}

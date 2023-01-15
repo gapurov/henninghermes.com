@@ -4,8 +4,8 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	content: [fromRoot('./src/**/*.+(astro|html|js|jsx|ts|tsx|mdx|md)')],
-	theme: {
+  content: [fromRoot('./src/**/*.+(astro|html|js|jsx|ts|tsx|mdx|md)')],
+  theme: {
     fontSize: {
       xs: ['0.75rem', { lineHeight: '1rem' }],
       sm: ['0.875rem', { lineHeight: '1.5rem' }],
@@ -34,7 +34,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require('@tailwindcss/forms'),
-  ],
+  plugins: [require('@tailwindcss/forms')],
 }

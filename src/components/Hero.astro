@@ -1,22 +1,24 @@
 ---
 // @ts-ignore
-import Container from '~/components/Container.astro';
-import SocialLink from '~/components/SocialLink.astro';
+import Container from '~/components/Container.astro'
+import SocialLink from '~/components/SocialLink.astro'
 
-import TwitterIcon from '~/components/TwitterIcon.astro';
-import XingIcon from '~/components/XingIcon.astro';
-import CVIcon from '~/components/CVIcon.astro';
-import LinkedInIcon from '~/components/LinkedInIcon.astro';
-
-const {title} = Astro.props;
+import TwitterIcon from '~/components/TwitterIcon.astro'
+import XingIcon from '~/components/XingIcon.astro'
+import CVIcon from '~/components/CVIcon.astro'
+import LinkedInIcon from '~/components/LinkedInIcon.astro'
+import About from '~/content/about.mdx'
 ---
 
 <Container className="pt-20 pb-24 sm:pb-28 lg:pt-36">
-  <section id="hero" class="grid grid-cols-1 gap-y-10 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
+  <section
+    id="hero"
+    class="grid grid-cols-1 gap-y-10 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12"
+  >
     <div class="lg:pl-20">
-      <div class="max-w-xs px-2.5 pb-5 lg:max-w-none mx-auto">
+      <div class="mx-auto max-w-xs px-2.5 pb-5 lg:max-w-none">
         <img
-          src='/cover.jpg'
+          src="/cover.jpg"
           alt="Dr. Henning Hermes Portrait"
           class="aspect-square rotate-3 rounded-2xl bg-slate-100 object-cover"
         />
@@ -24,10 +26,10 @@ const {title} = Astro.props;
     </div>
     <div class="lg:order-first lg:row-span-2">
       <h1 class="text-4xl font-bold tracking-tight text-slate-800 sm:text-6xl">
-        {title}
+        Welcome to Henning Hermes’ personal website!
       </h1>
       <div class="mt-10 space-y-7 text-base text-slate-600">
-        <slot />
+        <About />
       </div>
     </div>
     <div class="lg:pl-20">
@@ -36,10 +38,18 @@ const {title} = Astro.props;
         <SocialLink href="https://twitter.com/henninghermes" icon={TwitterIcon}>
           Follow on Twitter
         </SocialLink>
-        <SocialLink href="https://www.xing.com/profile/Henning_Hermes3" icon={XingIcon} className="mt-4">
+        <SocialLink
+          href="https://www.xing.com/profile/Henning_Hermes3"
+          icon={XingIcon}
+          className="mt-4"
+        >
           Follow on Xing
         </SocialLink>
-        <SocialLink href="https://www.linkedin.com/in/henning-hermes-052124b8/" icon={LinkedInIcon} className="mt-4">
+        <SocialLink
+          href="https://www.linkedin.com/in/henning-hermes-052124b8/"
+          icon={LinkedInIcon}
+          className="mt-4"
+        >
           Follow on LinkedIn
         </SocialLink>
         <SocialLink
