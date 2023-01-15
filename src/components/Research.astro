@@ -1,48 +1,18 @@
 ---
 import Container from '~/components/Container.astro';
-import Publications from '~/content/publications.mdx';
-import WorkingPapers from '~/content/working-papers.mdx';
-import WorkInProgress from '~/content/work-in-progress.mdx';
+import Research from '~/content/research.mdx';
 ---
 <section
   id="research"
   aria-label="Research"
   class="relative bg-teal-500 pb-20 pt-20 md:pt-24 bg-gradient-to-r from-teal-500 to-blue-500"
 >
-  <!-- <img
-    class="absolute top-1/2 left-1/2 max-w-none translate-x-[-44%] translate-y-[-40%]"
-    src={bg}
-    alt=""
-    width={2245}
-    height={1636}
-  /> -->
   <Container className="relative">
     <div class="max-w-2xl md:mx-auto md:text-center xl:max-w-none mb-20">
       <h2 class="font-display tracking-tight text-white text-5xl">
         Research
       </h2>
     </div>
-
-    <div class="mx-auto max-w-7xl mb-20">
-      <div class="sm:text-left mb-10">
-        <h2 class="text-3xl font-display leading-8 text-slate-50">Publications</h2>
-      </div>
-      <Publications />
-    </div>
-
-    <div class="mx-auto max-w-7xl mb-20">
-      <div class="sm:text-left mb-10">
-        <h2 class="text-3xl font-display leading-8 text-slate-50">Working Papers</h2>
-      </div>
-      <WorkingPapers />
-    </div>
-
-    <div class="mx-auto max-w-7xl mb-20">
-      <div class="sm:text-left mb-10">
-        <h2 class="text-3xl font-display leading-8 text-slate-50">Work in Progress</h2>
-      </div>
-      <WorkInProgress />
-    </div>
-
+    <Research />
   </Container>
 </section>
