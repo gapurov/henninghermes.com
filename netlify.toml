@@ -1,4 +1,7 @@
 [[headers]]
-  for = ["/fonts/*", "/images/*"]
+  for = "/fonts/*"
+    [headers.values]
+    Cache-Control = "public, max-age=86400" # 1 day
+  for = "/images/*"
     [headers.values]
     Cache-Control = "public, max-age=86400" # 1 day
