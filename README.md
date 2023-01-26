@@ -7,13 +7,13 @@ Inside of your project, you'll see the following folders and files:
 ```
 ├── public/
 ├── src/
-│   ├── content/
+│   ├── contents/
 │   ├── pages/
 │   └── ...
 ├── ...
 ```
 
-All of the content files can be found in `src/content/` directory.
+All of the content files can be found in `src/contents/` directory.
 
 Note: make sure not make any additional breaks at the ending or the beginning of a line inside the `<ResearchLink>` component or the build will fail.
 

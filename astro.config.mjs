@@ -7,10 +7,14 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://henninghermes.com',
-  integrations: [mdx(), sitemap(), tailwind({
-    config: {
-      applyBaseStyles: false
-    }
-  })]
-});
+  site: 'https://henninghermes.com/',
+  integrations: [
+    mdx(),
+    sitemap(),
+    tailwind({
+      config: {
+        applyBaseStyles: false,
+      },
+    }),
+  ],
+})
