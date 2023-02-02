@@ -14,8 +14,9 @@ import Container from '~/components/Container.astro'
     </div>
 
     <form
-      netlify
       netlify-honeypot
+      data-netlify
+      data-netlify-recaptcha="true"
       name="contact-henning"
       method="POST"
       class="grid grid-cols-1 gap-y-6 sm:gap-x-8"
