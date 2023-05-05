@@ -12,3 +12,8 @@
   for = "/lib/*"
     [headers.values]
     Cache-Control = "public, max-age=604800" # 1 week
+
+[[redirects]]
+  from = "/files/CV-Henning-Hermes.pdf"
+  to = "/CV-Henning-Hermes.pdf"
+  status = 200
