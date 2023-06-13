@@ -2,12 +2,11 @@
 // @ts-ignore
 import Container from '~/components/Container.astro'
 import SocialLink from '~/components/SocialLink.astro'
-
 import TwitterIcon from '~/components/TwitterIcon.astro'
-import XingIcon from '~/components/XingIcon.astro'
 import CVIcon from '~/components/CVIcon.astro'
 import LinkedInIcon from '~/components/LinkedInIcon.astro'
-import About from '~/contents/about.mdx'
+import GoogleScholarIcon from './GoogleScholarIcon.astro'
+import AboutContent from '~/contents/about.mdx'
 ---
 
 <Container className="pt-20 pb-24 sm:pb-28 lg:pt-36">
@@ -31,7 +30,7 @@ import About from '~/contents/about.mdx'
         Welcome to Henning Hermes’ personal website!
       </h1>
       <div class="mt-10 space-y-7 text-base text-slate-600">
-        <About />
+        <AboutContent />
       </div>
     </div>
     <div class="lg:pl-20">
@@ -41,18 +40,18 @@ import About from '~/contents/about.mdx'
           Follow on Twitter
         </SocialLink>
         <SocialLink
-          href="https://www.xing.com/profile/Henning_Hermes3"
-          icon={XingIcon}
-          className="mt-4"
-        >
-          Follow on Xing
-        </SocialLink>
-        <SocialLink
           href="https://www.linkedin.com/in/henning-hermes-052124b8/"
           icon={LinkedInIcon}
           className="mt-4"
         >
           Follow on LinkedIn
+        </SocialLink>
+        <SocialLink
+          href="https://scholar.google.de/citations?user=-Pfmn-4AAAAJ&hl=en"
+          icon={GoogleScholarIcon}
+          className="mt-4"
+        >
+          Follow on Google Scholar
         </SocialLink>
         <SocialLink
           href="/CV-Henning-Hermes.pdf"
